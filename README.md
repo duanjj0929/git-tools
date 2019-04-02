@@ -33,11 +33,9 @@ $ git config --global alias.st status
 $ git config --global alias.unstage 'reset HEAD --'
 
 ## 仓库迁移
-> $ ./script/git_transfer.py  
-Source Git URL: `self.source.repo.url`  
-Target Git URL: `self.target.repo.url`  
+> $ ./script/git_transfer.py --from=`<from_git_url>` --to=`<to_git_url>`  
 Preparing  
-Clone from `self.source.repo.url`  
-Push to `self.target.repo.url`  
+Clone from `<from_git_url>`  
+Push to `<to_git_url>`  
 Finishing  
 Done
