@@ -1,6 +1,7 @@
 # git工具
 
 ## 写在前面
+
 ```sh
 $ python3 -m venv .venv
 $ source .venv/bin/activate
@@ -8,16 +9,20 @@ $ pip install -r requirements.txt
 ```
 
 ## 目录
-* [配置](#配置)
-* [别名](#别名)
-* [仓库迁移](#仓库迁移)
+
+-   [配置](#配置)
+-   [别名](#别名)
+-   [仓库迁移](#仓库迁移)
+-   [跟踪空目录](#跟踪空目录)
 
 ## 配置
+
 ```sh
 $ ./script/git_config.py
 ```
 
 等价于下面的配置:
+
 ```sh
 $ git config --global color.ui auto
 $ git config --global core.autocrlf input/true
@@ -27,11 +32,13 @@ $ git config --global push.default simple
 ```
 
 ## 别名
+
 ```sh
 $ ./script/git_alias.py
 ```
 
 等价于下面的配置:
+
 ```sh
 $ git config --global alias.br branch
 $ git config --global alias.ci commit
@@ -43,11 +50,18 @@ $ git config --global alias.unstage 'reset HEAD --'
 ```
 
 ## 仓库迁移
+
 ```sh
-$ ./script/git_transfer.py --from=`<from_git_url>` --to=`<to_git_url>`
+$ ./script/git_transfer.py --from=<from_git_url> --to=<to_git_url>
 Preparing
-Clone from `<from_git_url>`
-Push to `<to_git_url>`
+Clone from <from_git_url>
+Push to <to_git_url>
 Finishing
 Done
+```
+
+## 跟踪空目录
+
+```sh
+$ ./script/git_keep.py -d <starting-point> [-f <keep-file>]
 ```
