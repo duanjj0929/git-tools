@@ -14,6 +14,7 @@ $ pip install -r requirements.txt
 -   [别名](#别名)
 -   [仓库迁移](#仓库迁移)
 -   [跟踪空目录](#跟踪空目录)
+-   [规范化 commit-message](#规范化-commit-message)
 
 ## 配置
 
@@ -65,3 +66,25 @@ Done
 ```sh
 $ ./script/git_keep.py -d <starting-point> [-f <keep-file>]
 ```
+
+## 规范化 commit-message
+
+-   [Angular 规范](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commit-message-format)
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+-   [Commitizen 工具](https://github.com/commitizen/cz-cli#conventional-commit-messages-as-a-global-utility)
+
+```sh
+$ sudo npm install -g commitizen
+$ sudo npm install -g cz-conventional-changelog
+$ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+```
+
+使用 `git cz` 代替 `git commit` 。
