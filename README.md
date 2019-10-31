@@ -15,6 +15,7 @@ $ pip install -r requirements.txt
 -   [仓库迁移](#仓库迁移)
 -   [跟踪空目录](#跟踪空目录)
 -   [规范化 commit-message](#规范化-commit-message)
+-   [git-open](#git-open)
 
 ## 配置
 
@@ -88,3 +89,13 @@ $ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
 使用 `git cz` 代替 `git commit` 。
+
+## git-open
+
+Type [git open](https://github.com/paulirish/git-open) to open the repo website (GitHub, GitLab, Bitbucket) in your browser.
+
+```bash
+$ sudo npm install --global git-open
+```
+
+To configure [GitLab](https://github.com/paulirish/git-open/blob/master/git-open.1.md#gitlab-options) support (or other unique hosting situations) you may need to set some options.
