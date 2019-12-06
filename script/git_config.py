@@ -9,7 +9,7 @@ SECTION_OPTION_VALUE_DICT = {
         "ui": "auto"
     },
     "core": {
-        "autocrlf": "input",
+        "autocrlf": "false",
         "editor": "vim"
     },
     "log": {

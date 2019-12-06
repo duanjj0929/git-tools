@@ -27,7 +27,7 @@ $ ./script/git_config.py
 
 ```sh
 $ git config --global color.ui auto
-$ git config --global core.autocrlf input/true
+$ git config --global core.autocrlf false/true
 $ git config --global core.editor vim
 $ git config --global log.date iso
 $ git config --global push.default simple
