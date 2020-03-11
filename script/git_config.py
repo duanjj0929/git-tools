@@ -18,6 +18,9 @@ SECTION_OPTION_VALUE_DICT = {
     "push": {
         "default": "simple"
     },
+    "credential": {
+        "helper": "store"
+    },
 }
 
 if os.name == 'nt':
