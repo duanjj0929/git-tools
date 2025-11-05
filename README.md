@@ -14,6 +14,7 @@ $ pip install -r requirements.txt
 -   [别名](#别名)
 -   [仓库迁移](#仓库迁移)
 -   [跟踪空目录](#跟踪空目录)
+-   [导出 Git Log 到 CSV](#导出-git-log-到-csv)
 -   [规范化 commit-message](#规范化-commit-message)
 -   [git-open](#git-open)
 
@@ -67,6 +68,44 @@ Done
 
 ```sh
 $ ./script/git_keep.py -d <starting-point> [-f <keep-file>]
+```
+
+## 导出 Git Log 到 CSV
+
+```sh
+$ ./script/git_log_csv.py [选项]
+```
+
+将 Git 提交历史导出为 CSV 文件，包含以下信息：
+- 缩写提交哈希（7位）
+- 作者姓名
+- 作者邮箱
+- 作者日期
+- 提交主题
+- 变更的文件列表（包含变更类型：A=新增, D=删除, R=重命名, C=复制, M=修改）
+
+**选项：**
+- `-h, --help`: 显示帮助信息
+- `-r, --repo PATH`: Git 仓库路径（默认为当前目录）
+- `-o, --output FILE`: 输出 CSV 文件路径（默认为 git_log.csv）
+- `-n, --number N`: 最多导出的提交数量（默认导出全部）
+
+**示例：**
+```sh
+# 导出当前目录的 git log
+$ ./script/git_log_csv.py
+
+# 导出指定仓库的 git log
+$ ./script/git_log_csv.py -r /path/to/repo
+
+# 指定输出文件名
+$ ./script/git_log_csv.py -o output.csv
+
+# 只导出最近 100 个提交
+$ ./script/git_log_csv.py -n 100
+
+# 组合使用
+$ ./script/git_log_csv.py -r /path/to/repo -o output.csv -n 50
 ```
 
 ## 规范化 commit-message
