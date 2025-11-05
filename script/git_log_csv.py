@@ -183,8 +183,8 @@ def export_git_log_to_csv(repo_path, output_file, max_count=None):
         # 作者日期
         author_date = datetime.fromtimestamp(commit.authored_date).strftime('%Y-%m-%d %H:%M:%S')
 
-        # 提交主题（第一行）
-        subject = commit.message.split('\n')[0] if commit.message else ''
+        # 提交信息
+        subject = commit.message if commit.message else ''
 
         # 变更的文件列表（已经是格式化字符串）
         files_str = get_changed_files(commit)
@@ -199,7 +199,7 @@ def export_git_log_to_csv(repo_path, output_file, max_count=None):
         ])
 
     # 写入 CSV 文件
-    csv_headers = ['提交哈希', '作者姓名', '作者邮箱', '作者日期', '提交主题', '变更文件列表']
+    csv_headers = ['提交哈希', '作者姓名', '作者邮箱', '作者日期', '提交信息', '变更文件列表']
 
     try:
         with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
