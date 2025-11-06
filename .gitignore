@@ -124,3 +124,13 @@ dmypy.json
 
 # vscode
 .vscode/
+
+# JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm, CLion, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+*.swp
+*.swo
+*~
